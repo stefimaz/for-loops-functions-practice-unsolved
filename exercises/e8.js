@@ -6,9 +6,21 @@
 
 export function getClientWithGreatestBalance(array) {
   // Your code goes here...
+  let greatestBalanceAccount = null;
 
+  for (let i = 0; i < array.length; i++) {
+    const currentAccount = array[i];
+    if (greatestBalanceAccount === null || currentAccount.balance > greatestBalanceAccount.balance) {
+      greatestBalanceAccount = currentAccount;
+    }
+  }
+
+  if (greatestBalanceAccount === null) {
+    return [];
+  } else {
+    return [greatestBalanceAccount];
+  }
 }
-
 
 
 // === TEST YOURSELF ===
