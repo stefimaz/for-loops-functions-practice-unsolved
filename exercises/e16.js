@@ -7,7 +7,20 @@
 
 export function flatArrays(array) {
   // Your code goes here...
+  let result= [];
 
+  for (let i= 0; i < array.length; i++) {
+    if (Array.isArray(array[i])) {
+      const subArray = array[i];
+      for (let j= 0; j<subArray.length; j++) {
+        result.push(subArray[j]);
+      }
+    } else {
+      result.push(array[i]);
+    }
+  }
+
+  return result;
 }
 
 
